@@ -1,0 +1,751 @@
+    1  sudo apt install docker
+
+    2  nano --help
+
+    3  sudo su
+
+    4  sudo apt purge docker
+
+    5  sudo apt  install docker.io
+
+    6  sudo docker network create mynetwork
+
+    7  sudo docker run -d --name mariadb_container --network mynetwork -e MYSQL_ROOT_PASSWORD=password mariadb:10.8
+
+    8  sudo docker run -d --name phpmyadmin_container --network mynetwork -e PMA_ARBITRARY=1 -e PMA_HOST=mariadb_container -p 8080:80 phpmyadmin/phpmyadmin
+
+    9  sudo docker ps
+
+   10  sudo docker inspect   -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mariadb_container
+
+   11  chown --help
+
+   12  stat --format %U i
+
+   13  stat --format %U
+
+   14  cd test
+
+   15  stat --format %U
+
+   16  ls
+
+   17  stat --format %U f1
+
+   18  stat --help
+
+   19  ls -a
+
+   20  pwd
+
+   21  mkdir test
+
+   22  ls -a
+
+   23  ll
+
+   24  ls - a
+
+   25  ls -l
+
+   26  ls -al
+
+   27  ls -l
+
+   28  cd test
+
+   29  touch test.bak
+
+   30  touch test.tmp
+
+   31  touch test.backup
+
+   32  toch test.txt
+
+   33  touch test.txt
+
+   34  touch test
+
+   35  ll
+
+   36  ll | grep \.txt
+
+   37  ll | grep '\.bak$\|\.tmp$\|\.backup$'
+
+   38  sudo rm  *.bak *.tmp *.backup
+
+   39  ll
+
+   40  touch test.bak
+
+   41  touch test.tmp
+
+   42  touch test.backup
+
+   43  ll
+
+   44  pwd
+
+   45  # ./test
+
+   46  cd ~ 
+
+   47  cd ./test2 && sudo rm  *.bak *.tmp *.backup
+
+   48  cd ./test && sudo rm  *.bak *.tmp *.backup
+
+   49  cd test
+
+   50  ll -l
+
+   51  cd ~
+
+   52  -d ./test
+
+   53  if [ -d ./test]; then echo yes; fi
+
+   54  if [ -d ./test ]; then echo yes; fi
+
+   55  cd test
+
+   56  touch test.tmp test.bak test.backup
+
+   57  ll
+
+   58  cd ~
+
+   59  if [ -d ./test ]; then sudo rm ./test/*.bak *.tmp *.backup ; fi
+
+   60  if [ -d ./test ]; then sudo rm ./test/*.bak ./test/*.tmp ./test/*.backup ; fi
+
+   61  cd test 
+
+   62  ll
+
+   63  touch test.tmp test.bak test.backup
+
+   64  lk
+
+   65  ll
+
+   66  cd ~
+
+   67  if [ -d ./test ]; then sudo rm ./test/*.bak ./test/*.tmp ./test/*.backup ; fi
+
+   68  ll
+
+   69  cd test
+
+   70  touch test.tmp test.bak test.backup
+
+   71  ll
+
+   72  nano script_1.sh
+
+   73  cd ~
+
+   74  bash ./test/script_1.sh 
+
+   75  bash ./test/script_1.sh test
+
+   76  cd test
+
+   77  ll
+
+   78  nano script_1.sh
+
+   79  pwd
+
+   80  cd test
+
+   81  touch test.tmp test.bak test.backup
+
+   82  ll
+
+   83  dwd
+
+   84  pwd
+
+   85  sudo su
+
+   86  ll
+
+   87  ls -l | sort -k3,3
+
+   88  ls | sort -k3,3 
+
+   89  ls | sort -k3,3 | grep -k3 == alex
+
+   90  ls | sort -k3,3 | grep alex
+
+   91  ls | sort -k3,3 | grep test
+
+   92  grep --help
+
+   93  ls -l | sort -k3,3
+
+   94  ls -l | sort -k3
+
+   95  ls
+
+   96  ls -a
+
+   97  ls -la
+
+   98  ls --help
+
+   99  ll
+
+  100  ls -l f1
+
+  101  stat --format %U f1
+
+  102  mkdir $([200~stat --format %U f1
+
+  103  mkdir $(stat --format %U f1)
+
+  104  ll
+
+  105  pwd
+
+  106  nano ownersort.sh
+
+  107  cd ~
+
+  108  ls -a
+
+  109  ll -l
+
+  110  ll -a
+
+  111  ll -l
+
+  112  ls -l
+
+  113  cd test
+
+  114  ls -l
+
+  115  cd root
+
+  116  pwd
+
+  117  cd .
+
+  118  cd..
+
+  119  cd ..
+
+  120  cd ~
+
+  121  bash /alex/test/ownersort.sh
+
+  122  bash ./test/ownersort.sh
+
+  123  nano test/ownersort.sh 
+
+  124  nano test/ownersort.sh test test
+
+  125  bash ./test/ownersort.sh test test
+
+  126  nano test/ownersort.sh 
+
+  127  pwd
+
+  128  cd test
+
+  129  ls -l
+
+  130  cp f1 test/$(stat --format %U f1)/
+
+  131  cp f1 test/$(stat --format %U f1)
+
+  132  cp f1 test/$(stat --format %U f1/)
+
+  133  cp f1 test/root/
+
+  134  cp f1 test/root
+
+  135  nano test/ownersort.sh 
+
+  136  ls -l
+
+  137  nano ownersort.sh 
+
+  138  ls -l
+
+  139  cp f1 /test/root/
+
+  140  cp ./f1 /test/root/
+
+  141  cp f1 ./root/
+
+  142  cp f1 ./root
+
+  143  ls -l
+
+  144  nano root
+
+  145  cp f1 ./root/
+
+  146  cp --help
+
+  147  nano ownersort.sh 
+
+  148  ls -l
+
+  149  cd ~
+
+  150  nano test/ownersort.sh 
+
+  151  cd ~
+
+  152  bash ./test/ownersort.sh test test
+
+  153  nano test/ownersort.sh 
+
+  154  cd ..
+
+  155  bash ./test/ownersort.sh test test
+
+  156  bash home/alex/test/ownersort.sh test test
+
+  157  bash /home/alex/test/ownersort.sh test test
+
+  158  nano test/ownersort.sh 
+
+  159  cd test
+
+  160  pwd
+
+  161  cd alex
+
+  162  nano test/ownersort.sh 
+
+  163  cd ~
+
+  164  bash /home/alex/test/ownersort.sh test test
+
+  165  nano test/ownersort.sh 
+
+  166  bash /home/alex/test/ownersort.sh test test
+
+  167  bash ./test/ownersort.sh test test
+
+  168  nano test/ownersort.sh 
+
+  169  bash ./test/ownersort.sh test test
+
+  170  nano test/ownersort.sh 
+
+  171  bash ./test/ownersort.sh test test
+
+  172  nano test/ownersort.sh 
+
+  173  bash ./test/ownersort.sh ./test ./test
+
+  174  bash ./test/ownersort.sh /home/alex/test /home/alex/test
+
+  175  ls -l
+
+  176  cd test
+
+  177  ls -l
+
+  178  tree
+
+  179  cd root
+
+  180  ls
+
+  181  ls -a
+
+  182  ls -l
+
+  183  cd ..
+
+  184  cd alex
+
+  185  cd ..
+
+  186  cd alex
+
+  187  ls -l
+
+  188  cd ../..
+
+  189  ls -l
+
+  190  cd test
+
+  191  ls -l
+
+  192  nano test/ownersort.sh 
+
+  193  nano ownersort.sh 
+
+  194  nano script_1.sh 
+
+  195  nano ownersort.sh 
+
+  196  mkdir testfolder
+
+  197  mkdir testfolder/bin
+
+  198  cp /bin/bash testfolder/bin
+
+  199  ldd /bin/bash
+
+  200  mkdir testfolder/lib
+
+  201  mkdir testfolder/lib64
+
+  202  cp /lib/x86_64-linux-gnu/libtinfo.so.6 testfolder/lib
+
+  203  cp /lib/x86_64-linux-gnu/libc.so.6 testfolder/lib
+
+  204  cp /lib64/ld-linux-x86-64.so.2 testfolder/lib64/
+
+  205  sudo chroot testfolder/
+
+  206  cp /bin/ls testfolder/bin
+
+  207  cd testfolder/bin/
+
+  208  ls -l
+
+  209  cd ~
+
+  210  ldd /bin/ls
+
+  211  cp lib/x86_64-linux-gnu/libselinux.so.1 testfolder/lib
+
+  212  cp /lib/x86_64-linux-gnu/libselinux.so.1 testfolder/lib
+
+  213  cp /lib/x86_64-linux-gnu/libc.so.6 testfolder/lib
+
+  214  cp /lib/x86_64-linux-gnu/libpcre2-8.so.0 testfolder/lib
+
+  215  cp /lib64/ld-linux-x86-64.so.2 testfolder/lib64/
+
+  216  sudo chroot testfolder/
+
+  217  ls -l /proc/$$/ns
+
+  218  lsns
+
+  219  sudo lsns
+
+  220  man unshre
+
+  221  man unshare
+
+  222  ip netns list
+
+  223  sudo ip netns add testns
+
+  224  ip netns list
+
+  225  sudo ip netns exec testns bash
+
+  226  ip netns exec testns bash
+
+  227  sudo ip netns exec testns bash
+
+  228  ip a
+
+  229  ip link add veth0 type veth peer name veth1
+
+  230  sudo ip link add veth0 type veth peer name veth1
+
+  231  sudo ip link set veth1 netns testns
+
+  232  ip a
+
+  233  sudo ip addr add 10.0.0.1/24 dev veth0
+
+  234  ip a
+
+  235  sudo ip link set dev weth0 up
+
+  236  sudo ip link set dev veth0 up
+
+  237  ip a
+
+  238  sudo ip netns exec testns bash
+
+  239  sudo unshare --net /bin/bash
+
+  240  sudo unshare --pid --net --fork --mount-proc /bin/bash
+
+  241  sudo unshare --pid --net --fork --mount-proc --mount /bin/bash
+
+  242  sudo apt install cgroup-tools
+
+  243  sudo unshare --fork --pid --mount-proc bash
+
+  244  cgexec -g memory:mytestgroup bash
+
+  245  sudo cgexec -g memory:mytestgroup bash
+
+  246  sudo apt install lxc lxc-templates
+
+  247  sudo apt-get install lxc debootstrap bridge-utils lxc-templates
+
+  248  sudo lxc-create -n test123 -t ubuntu
+
+  249  lxc-ls
+
+  250  sudo lxc-ls
+
+  251  nano /var/lib/lxc/test123/config
+
+  252  sudo nano /var/lib/lxc/test123/config
+
+  253  free -m
+
+  254  sudo lxc-start test123
+
+  255  sudo lxc-start test-gb
+
+  256  sudo lxc-start test123
+
+  257  sudo nano /var/lib/lxc/test123/config
+
+  258  sudo lxc-start test123
+
+  259  sudo lxc-attach test123
+
+  260  sudo lxc-stop test123
+
+  261  sudo nano /var/lib/lxc/test123/config
+
+  262  ls /sys/fs/cgroup/lxc.payload.test123/
+
+  263  sudo ls /sys/fs/cgroup/lxc.payload.test123/
+
+  264  ls /sys/fs/cgroup/lxc.payload.test123/
+
+  265  sudo ls /sys/fs/cgroup/lxc.payload.test123
+
+  266  sudo ls /sys/fs/cgroup/lxc.payload.test123/
+
+  267  ls /sys/fs/cgroup/lxc.payload.test123/
+
+  268  sudo lxc-start test123
+
+  269  ls /sys/fs/cgroup/lxc.payload.test123/
+
+  270  sudo lxc-ls -f
+
+  271  sudo lxc-stop test123
+
+  272  sudo lxc-destroy test123
+
+  273  lxc-create -n test1 -t ubuntu
+
+  274  sudo lxc-create -n test1 -t ubuntu
+
+  275  sudo lxc-create -n test2 -t ubuntu
+
+  276  sudo lxc-ls -f
+
+  277  sudo lxc-start test1
+
+  278  sudo lxc-start test2
+
+  279  sudo lxc-ls -f
+
+  280  sudo lxc-attach test1
+
+  281  # 10.0.3.80/24  
+
+  282  sudo lxc-attach test2
+
+  283  # 10.0.3.68/24
+
+  284  sudo lxc-attach test2
+
+  285  sudo nano /var/lib/lxc/test1/config
+
+  286  sudo nano /var/lib/lxc/test2/config
+
+  287  sudo nano /var/lib/lxc/test1/config
+
+  288  sudo nano /var/lib/lxc/test2/config
+
+  289  lxc-ls -f
+
+  290  sudo lxc-ls -f
+
+  291  sudo lxc-stop test1
+
+  292  sudo lxc-start test1
+
+  293  sudo lxc-start test2
+
+  294  sudo nano /var/lib/lxc/test1/config
+
+  295  sudo nano /var/lib/lxc/test2/config
+
+  296  sudo lxc-ls -f
+
+  297  sudo lxc-stop test1
+
+  298  sudo lxc-stop test2
+
+  299  sudo lxc-start test1
+
+  300  sudo lxc-start test2
+
+  301  sudo lxc-ls -f
+
+  302  sudo ping 10.0.3.25
+
+  303  sudo ping 10.0.3.35
+
+  304  sudo lxc-execute-n test1 /bin/ls
+
+  305  sudo lxc-execute -n test1 /bin/ls
+
+  306  lxc-execute -n test1 /bin/ls
+
+  307  sudo lxc-execute -n test1 /bin/ls
+
+  308  sudo lxc-execute -n test2 /bin/ls
+
+  309  sudo lxc-stop test1
+
+  310  sudo lxc-stop test2
+
+  311  sudo lxc-execute -n test1 /bin/ls
+
+  312  sudo lxc-execute -n test2 /bin/ls
+
+  313  #####################
+
+  314  sudo lxc-attach -n test1
+
+  315  sudo lxc-ls -f
+
+  316  sudo lxc-start test1
+
+  317  sudo lxc-attach -n test1
+
+  318  docker stop mariadb
+
+  319  sudo docker stop mariadb
+
+  320  docker ps -a
+
+  321  sudo docker ps -a
+
+  322  docker rm mariadb
+
+  323  sudo docker rm mariadb
+
+  324  sudo docker ps -a
+
+  325  sudo su
+
+  326  docker run --name scme-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+
+  327  sudo su
+
+  328  ls
+
+  329  ls
+
+  330  sudo su
+
+  331  docker swarm init --advertise-addr 1.1.90.90
+
+  332  sudo su
+
+  333  sudo apt update && sudo apt upgrade
+
+  334  sudo dpkg --add-architecture i386
+
+  335  sudo mkdir -pm755 /etc/apt/keyrings
+
+  336  sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+
+  337  sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
+
+  338  sudo apt update
+
+  339  sudo su
+
+  340  docker swarm join-token manager
+
+  341  docker node ls
+
+  342  docker node init
+
+  343  sudo docker node init
+
+  344  sudo docker swarm init
+
+  345  docker swarm init
+
+  346  sudo docker node ls
+
+  347  ls
+
+  348  nano docker-compose.yml
+
+  349  sudo su
+
+  350  sd ~
+
+  351  cd ~
+
+  352  ls
+
+  353  sudo su
+
+  354  cat > Pets.txt
+
+  355  cat > PackAnimals.txt
+
+  356  cat Pets.txt PackAnimals.txt > HumanFriends.txt
+
+  357  cat HumanFriends.txt
+
+  358  mv HumanFriends.txt Human_Friends.txt
+
+  359  ls
+
+  360  mkdir FriendsDirectory
+
+  361  mv Human_Friends.txt FriendsDirectory/
+
+  362  sudo apt-get install software-properties-common
+
+  363  sudo add-apt-repository 'deb http://repo.mysql.com/apt/ubuntu/ bionic mysql-8.0'
+
+  364  sudo apt-get update
+
+  365  sudo apt-get install mysql-server
+
+  366  sudo dpkg -i example_package.deb
+
+  367  sudo apt download zip
+
+  368  sudo dpkg -i zip_3.0-12build2_amd64.deb
+
+  369  sudo dpkg -r zip_3.0-12build2_amd64.deb
+
+  370  sudo dpkg -i zip
+
+  371  sudo apt install wget
+
+  372  sudo apt download nginx
+
+  373  sudo dpkg -i nginx_1.18.0-6ubuntu14.4_amd64.deb
+
+  374  sudo dpkg -r nginx
+
+  375  history > Verzun_Alexandr_07/07/2024_group_num_5823.txt
+
+  376  history > Verzun_Alexandr_07_07_2024_group_num_5823.txt
